@@ -2,16 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const [, , third] = [1, 2, 3];
+
+console.log(third);
+
+const people = [
+  { id: Date.now() + Math.ceil(Math.random() * 9999), name: 'Max', age: 28,  },
+  { id: Date.now() + Math.ceil(Math.random() * 9999), name: 'Manu', age: 29 },
+  { id: Date.now() + Math.ceil(Math.random() * 9999), name: 'Stephanie', age: 26 }
+];
+
+console.log(people);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App people={people} number={third} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
